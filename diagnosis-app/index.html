@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Diagnose Any Problem – FixItAll</title>
+ <meta name="description" content="Get AI-powered solutions for health, home, and auto problems instantly. Describe your problem and get expert guidance."/>
+ <link rel="canonical" href="/diagnosis-app/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/scripts.js?v=3"></script>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true">
+   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+    <path d="M2 17l10 5 10-5"/>
+    <path d="M2 12l10 5 10-5"/>
+   </svg>
+  </div>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+  <nav class="header-nav">
+   <a href="/diagnosis-app/">Home</a>
+   <a href="/diagnosis-app/health/">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+    <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+   </button>
+    <button type="button" class="btn-login">Login</button>
+  </nav>
+ </header>
+
+<section class="hero">
+ <h1>Diagnose Any Problem</h1>
+ <p>Health, Home or Auto – Get AI-powered solutions instantly</p>
+ <div class="hero-search" id="heroSearchContainer" style="display: flex; position: relative;">
+  <input type="text" placeholder="Describe your problem..." id="heroSearchInput" autocomplete="off"/>
+   <button type="button" onclick="performHeroSearch()"><span>🔍</span> Search</button>
+  <div class="search-dropdown" id="searchDropdown">
+   <div class="search-dropdown-label">Most searched</div>
+   <div class="search-dropdown-list">
+    <div class="search-dropdown-item" data-query="Fever">Fever</div>
+    <div class="search-dropdown-item" data-query="Car won't start">Car won't start</div>
+    <div class="search-dropdown-item" data-query="AC not cooling">AC not cooling</div>
+    <div class="search-dropdown-item" data-query="Bike vibration">Bike vibration</div>
+    <div class="search-dropdown-item" data-query="Water leak">Water leak</div>
+    <div class="search-dropdown-item" data-query="Headache">Headache</div>
+   </div>
+  </div>
+ </div>
+ <div class="hero-pills">
+  <span class="pill" onclick="performHeroSearch('AC not cooling')">AC not cooling</span>
+  <span class="pill" onclick="performHeroSearch('Fever')">Fever</span>
+   <span class="pill" onclick="performHeroSearch('Car won\'t start')">Car won't start</span>
+  <span class="pill" onclick="performHeroSearch('Bike vibration')">Bike vibration</span>
+  <span class="pill" onclick="performHeroSearch('Water leak')">Water leak</span>
+ </div>
+</section>
+
+<section class="section container">
+ <div class="section-title">
+  <h2>Browse by Category</h2>
+  <p>Choose a category to get started</p>
+ </div>
+ <div class="category-grid">
+   <a href="/diagnosis-app/health/" class="category-card">
+    <div class="category-icon" style="background:var(--health-soft)">❤</div>
+    <h3>Health</h3>
+    <p>Symptom checker</p>
+   </a>
+   <a href="/diagnosis-app/car/" class="category-card">
+    <div class="category-icon" style="background:var(--auto-soft)">🚗</div>
+    <h3>Automobile</h3>
+    <p>Vehicle diagnostics</p>
+   </a>
+   <a href="/diagnosis-app/home/" class="category-card">
+    <div class="category-icon" style="background:var(--home-soft)">🏠</div>
+    <h3>Home Repairs</h3>
+    <p>Household repairs</p>
+   </a>
+   <a href="/diagnosis-app/tech/" class="category-card">
+    <div class="category-icon" style="background:var(--success-soft)">💻</div>
+    <h3>Electronics</h3>
+    <p>Gadgets & devices</p>
+   </a>
+  <a href="/diagnosis-app/categories.html" class="category-card">
+   <div class="category-icon" style="background:var(--surface-soft)">⋯</div>
+   <h3>More</h3>
+   <p>Other categories</p>
+  </a>
+ </div>
+</section>
+
+<section class="container">
+ <div class="trust-row">
+   <div class="trust-item">
+    <div class="trust-item-icon">✅</div>
+    <div class="trust-item-value">100K+</div>
+    <div class="trust-item-label">Problems Solved</div>
+   </div>
+  <div class="trust-item">
+   <div class="trust-item-icon">👨‍⚕</div>
+   <div class="trust-item-value">50+</div>
+   <div class="trust-item-label">Expert Sources</div>
+  </div>
+   <div class="trust-item">
+    <div class="trust-item-icon">🤖</div>
+    <div class="trust-item-value">24/7</div>
+    <div class="trust-item-label">AI Support</div>
+   </div>
+   <div class="trust-item">
+    <div class="trust-item-icon">👥</div>
+    <div class="trust-item-value">Millions</div>
+    <div class="trust-item-label">Trusted by</div>
+   </div>
+ </div>
+</section>
+
+<section class="section container">
+ <div class="section-title">
+  <h2>Latest Articles</h2>
+  <p>Expert tips and guides for health, home, and auto problems</p>
+  <a href="/diagnosis-app/blog/" class="view-all-link">View All →</a>
+ </div>
+ <div class="blog-grid">
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-engine-overheating.jpg" alt="Car maintenance tips" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category auto">Auto</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/engine-overheating-causes-fixes">5 Common Causes of Engine Overheating and How to Fix Them</a></h3>
+    <p class="blog-excerpt">Don't let an overheating engine leave you stranded. Learn the top 5 causes and step-by-step fixes you can do yourself before calling a mechanic.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 20, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-ac-troubleshooting.png" alt="Home AC maintenance" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category home">Home</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/ac-not-cooling-troubleshooting">AC Not Cooling? Complete Troubleshooting Guide</a></h3>
+    <p class="blog-excerpt">Your AC runs but doesn't cool. Before calling an expensive technician, try these 7 diagnostic steps that solve 80% of cooling issues.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 18, 2026</span>
+     <span class="blog-read-time">7 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-fever-guide.jpg" alt="Health fever symptoms" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category health">Health</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/fever-adults-children-when-to-worry">Fever in Adults and Children: When to Worry and What to Do</a></h3>
+    <p class="blog-excerpt">Not all fevers need emergency care. Learn the temperature thresholds, warning signs, and home remedies for adults vs children.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 15, 2026</span>
+     <span class="blog-read-time">6 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-laptop-overheating.jpg" alt="Laptop overheating fix" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category tech">Tech</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/laptop-overheating-fixes">Laptop Overheating? 6 Quick Fixes Before Buying a New One</a></h3>
+    <p class="blog-excerpt">Your laptop sounds like a jet engine. Try these 6 proven fixes – from cleaning dust to undervolting – that can drop temps by 15-20°C.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 12, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-leaking-faucet.jpg" alt="Leaking faucet repair" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category home">Home</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/leaking-faucet-repair">How to Fix a Leaking Faucet: Step-by-Step Guide</a></h3>
+    <p class="blog-excerpt">A dripping faucet wastes water and drives up your bill. Learn the most common causes and easy DIY fixes for kitchen and bathroom taps.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 10, 2026</span>
+     <span class="blog-read-time">4 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-burn-first-aid.jpg" alt="Minor burn first aid" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category health">Health</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/minor-burn-first-aid">Minor Burns: First Aid Steps That Actually Help</a></h3>
+    <p class="blog-excerpt">Not every burn needs an ER visit. Know the right first aid steps for minor kitchen and sun burns, and when to see a doctor.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 8, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-smartphone-battery.jpg" alt="Smartphone battery draining" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category tech">Tech</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/smartphone-battery-draining">Smartphone Battery Draining Fast? 7 Common Causes and Fixes</a></h3>
+    <p class="blog-excerpt">If your phone barely lasts half the day, one of these common culprits is likely responsible – and most fixes take under 10 minutes.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 5, 2026</span>
+     <span class="blog-read-time">6 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-brake-noise.jpg" alt="Car brake noise repair" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category auto">Auto</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/brake-noise-what-it-means">Brake Noise? Here's What It Means and When to Service It</a></h3>
+    <p class="blog-excerpt">Squealing, grinding, or clicking brakes each point to different problems. Use this guide to diagnose the noise before repair costs rise.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Aug 2, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card">
+   <img src="/diagnosis-app/images/blog/blog-water-heater-issues.jpg" alt="Water heater repair" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category home">Home</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/water-heater-not-working">Water Heater Not Working? 5 Common Issues and Fixes</a></h3>
+    <p class="blog-excerpt">No hot water? Strange noises or leaks? Learn the 5 most common water heater problems and which ones you can fix yourself vs when to call a pro.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 30, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card hidden-article">
+   <img src="/diagnosis-app/images/blog/blog-car-wont-start.jpg" alt="Car won't start" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category auto">Auto</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/car-wont-start">Car Won't Start? 7 Possible Reasons and Quick Checks</a></h3>
+    <p class="blog-excerpt">Dead battery, bad starter, or empty gas tank? Run through these 7 quick checks before you call for a tow and save yourself time and money.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 28, 2026</span>
+     <span class="blog-read-time">6 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card hidden-article">
+   <img src="/diagnosis-app/images/blog/blog-sore-throat-remedies.jpg" alt="Sore throat remedies" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category health">Health</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/sore-throat-remedies">Sore Throat Remedies: What Works and What Doesn't</a></h3>
+    <p class="blog-excerpt">From honey and lemon to over-the-counter sprays, we separate evidence-based remedies from old wives' tales so you can actually feel better faster.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 25, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card hidden-article">
+   <img src="/diagnosis-app/images/blog/blog-wifi-slow.jpg" alt="Slow Wi-Fi" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category tech">Tech</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/wifi-slow-fixes">Wi-Fi Slow? 8 Router Tweaks for Faster Internet</a></h3>
+    <p class="blog-excerpt">Buffering, dead zones, and dropped calls? These 8 router adjustments – from channel selection to placement – can dramatically improve your connection.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 22, 2026</span>
+     <span class="blog-read-time">7 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card hidden-article">
+   <img src="/diagnosis-app/images/blog/blog-circuit-breaker.jpg" alt="Circuit breaker panel" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category home">Home</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/circuit-breaker-tripping">Circuit Breaker Keeps Tripping? Diagnose and Fix It Safely</a></h3>
+    <p class="blog-excerpt">A tripping breaker is annoying and potentially dangerous. Learn how to identify overloaded circuits, faulty appliances, and when to call an electrician.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 19, 2026</span>
+     <span class="blog-read-time">6 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card hidden-article">
+   <img src="/diagnosis-app/images/blog/blog-flat-tire.jpg" alt="Flat tire change" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category auto">Auto</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/flat-tire-change-guide">Flat Tire? How to Change It Without Calling Roadside Assistance</a></h3>
+    <p class="blog-excerpt">A flat tire doesn't have to ruin your day. This step-by-step guide shows you how to safely change a tire in 15 minutes with basic tools.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 16, 2026</span>
+     <span class="blog-read-time">5 min read</span>
+    </div>
+   </div>
+  </article>
+  <article class="blog-card hidden-article">
+   <img src="/diagnosis-app/images/blog/blog-food-poisoning.jpg" alt="Food safety" class="blog-card-image" loading="lazy">
+   <div class="blog-card-content">
+    <span class="blog-category health">Health</span>
+     <h3 class="blog-title"><a href="/diagnosis-app/blog/food-poisoning-home-care">Food Poisoning: Home Care vs When to See a Doctor</a></h3>
+    <p class="blog-excerpt">Nausea, vomiting, and dehydration can escalate fast. Know the signs that mean home rest is enough – and the red flags that need immediate medical attention.</p>
+    <div class="blog-meta">
+     <span class="blog-date">Jul 13, 2026</span>
+     <span class="blog-read-time">6 min read</span>
+    </div>
+   </div>
+  </article>
+ </div>
+</section>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social">
+    <a href="https://twitter.com/fixitall" target="_blank" rel="noopener">𝕏</a>
+    <a href="https://linkedin.com/company/fixitall" target="_blank" rel="noopener">in</a>
+    <a href="https://facebook.com/fixitall" target="_blank" rel="noopener">📘</a>
+    <a href="https://instagram.com/fixitall" target="_blank" rel="noopener">📸</a>
+   </div>
+  </div>
+   <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="/diagnosis-app/">Home</a>
+    <a href="/diagnosis-app/categories.html">Categories</a>
+    <a href="/diagnosis-app/how-it-works/">How It Works</a>
+    <a href="/diagnosis-app/blog/">Blog</a>
+    <a href="/diagnosis-app/about/">About Us</a>
+   </div>
+   <div class="footer-col">
+    <h4>Categories</h4>
+    <a href="/diagnosis-app/health/">Health</a>
+    <a href="/diagnosis-app/car/">Automobile</a>
+    <a href="/diagnosis-app/home/">Home Repairs</a>
+    <a href="/diagnosis-app/tech/">Electronics</a>
+    <a href="/diagnosis-app/categories.html">More</a>
+   </div>
+   <div class="footer-col">
+    <h4>Resources</h4>
+    <a href="/diagnosis-app/how-it-works/">Guides</a>
+    <a href="/diagnosis-app/faq.html">FAQs</a>
+    <a href="/diagnosis-app/disclaimer.html">Disclaimer</a>
+    <a href="/diagnosis-app/privacy.html">Privacy Policy</a>
+    <a href="/diagnosis-app/terms.html">Terms of Use</a>
+   </div>
+ </div>
+ <div class="footer-bottom">© 2024 FixItAll. All rights reserved.</div>
+</footer>
+
+<script>
+ function performHeroSearch(query) {
+  const searchContainer = document.getElementById('heroSearchContainer');
+  if (searchContainer) {
+   searchContainer.style.display = 'none';
+  }
+  
+  let searchQuery = query;
+  
+  if (!searchQuery) {
+   searchQuery = document.getElementById('heroSearchInput') ? 
+    document.getElementById('heroSearchInput').value : null;
+  }
+  
+  if (!searchQuery) {
+   if (searchContainer && searchContainer.style.display === 'none') {
+    searchContainer.style.display = 'flex';
+   }
+   return;
+  }
+  
+  searchQuery = searchQuery.trim();
+  const lowerQuery = searchQuery.toLowerCase();
+  
+  const exactKeywordMap = {
+   'fever': '/diagnosis-app/health/fever.html',
+   'headache': '/diagnosis-app/health/headache.html',
+   'migraine': '/diagnosis-app/health/headache.html',
+   'stomach pain': '/diagnosis-app/health/stomach-pain.html',
+   'stomach ache': '/diagnosis-app/health/stomach-pain.html',
+   'nausea': '/diagnosis-app/health/stomach-pain.html',
+   'vomiting': '/diagnosis-app/health/stomach-pain.html',
+   'cold': '/diagnosis-app/health/fever.html',
+   'flu': '/diagnosis-app/health/fever.html',
+   'cough': '/diagnosis-app/health/fever.html',
+   'sore throat': '/diagnosis-app/health/fever.html',
+   'knee pain': '/diagnosis-app/health/knee-pain.html',
+   'joint pain': '/diagnosis-app/health/knee-pain.html',
+   'arthritis': '/diagnosis-app/health/knee-pain.html',
+   'back pain': '/diagnosis-app/health/knee-pain.html',
+   'diarrhea': '/diagnosis-app/health/stomach-pain.html',
+   'insomnia': '/diagnosis-app/health/knee-pain.html',
+   'anxiety': '/diagnosis-app/health/knee-pain.html',
+   'dizziness': '/diagnosis-app/health/knee-pain.html',
+   'chest pain': '/diagnosis-app/health/knee-pain.html',
+   'fatigue': '/diagnosis-app/health/knee-pain.html',
+   'allergies': '/diagnosis-app/health/fever.html',
+   'burn': '/diagnosis-app/health/fever.html',
+   'food poisoning': '/diagnosis-app/health/stomach-pain.html',
+   'engine noise': '/diagnosis-app/car/engine-noise.html',
+   'engine knocking': '/diagnosis-app/car/engine-noise.html',
+   'strange noise': '/diagnosis-app/car/engine-noise.html',
+   'knocking': '/diagnosis-app/car/engine-noise.html',
+   'squealing': '/diagnosis-app/car/engine-noise.html',
+   'car wont start': '/diagnosis-app/car/wont-start.html',
+   "car won't start": '/diagnosis-app/car/wont-start.html',
+   'wont start': '/diagnosis-app/car/wont-start.html',
+   "won't start": '/diagnosis-app/car/wont-start.html',
+   'dead battery': '/diagnosis-app/car/wont-start.html',
+   'battery': '/diagnosis-app/car/wont-start.html',
+   'overheating': '/diagnosis-app/car/overheating.html',
+   'coolant': '/diagnosis-app/car/overheating.html',
+   'steam': '/diagnosis-app/car/overheating.html',
+   'brake noise': '/diagnosis-app/car/engine-noise.html',
+   'brake': '/diagnosis-app/car/engine-noise.html',
+   'tire pressure': '/diagnosis-app/car/overheating.html',
+   'flat tire': '/diagnosis-app/car/overheating.html',
+   'transmission': '/diagnosis-app/car/overheating.html',
+   'oil leak': '/diagnosis-app/car/overheating.html',
+   'ac not cooling': '/diagnosis-app/home/ac-not-cooling.html',
+   'air conditioning': '/diagnosis-app/home/ac-not-cooling.html',
+   'cooling': '/diagnosis-app/home/ac-not-cooling.html',
+   'leaking tap': '/diagnosis-app/home/leaking-tap.html',
+   'leaking faucet': '/diagnosis-app/home/leaking-tap.html',
+   'water leak': '/diagnosis-app/home/leaking-tap.html',
+   'dripping': '/diagnosis-app/home/leaking-tap.html',
+   'washing machine': '/diagnosis-app/home/washing-machine.html',
+   'laundry': '/diagnosis-app/home/washing-machine.html',
+   'hvac': '/diagnosis-app/home/ac-not-cooling.html',
+   'heating': '/diagnosis-app/home/ac-not-cooling.html',
+   'water heater': '/diagnosis-app/home/ac-not-cooling.html',
+   'clogged drain': '/diagnosis-app/home/leaking-tap.html',
+   'plumbing': '/diagnosis-app/home/leaking-tap.html',
+   'laptop': '/diagnosis-app/tech/laptop.html',
+   'laptop overheating': '/diagnosis-app/tech/laptop.html',
+   'phone': '/diagnosis-app/tech/phone.html',
+   'smartphone': '/diagnosis-app/tech/phone.html',
+   'wifi': '/diagnosis-app/tech/wifi.html',
+   'wi-fi': '/diagnosis-app/tech/wifi.html',
+   'internet': '/diagnosis-app/tech/wifi.html',
+   'computer': '/diagnosis-app/tech/laptop.html',
+   'desktop': '/diagnosis-app/tech/laptop.html',
+   'network': '/diagnosis-app/tech/wifi.html',
+   'bike vibration': '/diagnosis-app/bike/chain-noise.html',
+   'chain noise': '/diagnosis-app/bike/chain-noise.html',
+   'poor mileage': '/diagnosis-app/bike/poor-mileage.html',
+   'mileage': '/diagnosis-app/bike/poor-mileage.html',
+   'fuel consumption': '/diagnosis-app/bike/poor-mileage.html',
+   'pests': '/diagnosis-app/garden/pests.html',
+   'irrigation': '/diagnosis-app/garden/irrigation.html',
+   'lawn': '/diagnosis-app/garden/lawn-care.html',
+   'plant disease': '/diagnosis-app/garden/plant-disease.html',
+   'soil': '/diagnosis-app/garden/soil-problems.html'
+  };
+  
+  if (exactKeywordMap[lowerQuery]) {
+   window.location.href = exactKeywordMap[lowerQuery];
+   return;
+  }
+  
+  for (const [phrase, url] of Object.entries(exactKeywordMap)) {
+   if (lowerQuery.includes(phrase)) {
+    window.location.href = `${url}?q=${encodeURIComponent(searchQuery)}`;
+    return;
+   }
+  }
+  
+  if (lowerQuery.includes('health') || lowerQuery.includes('medical') || lowerQuery.includes('sick') || 
+    lowerQuery.includes('pain') || lowerQuery.includes('fever') || lowerQuery.includes('headache') ||
+    lowerQuery.includes('stomach') || lowerQuery.includes('cold') || lowerQuery.includes('flu') ||
+    lowerQuery.includes('cough') || lowerQuery.includes('sore throat') || lowerQuery.includes('congestion') ||
+    lowerQuery.includes('nausea') || lowerQuery.includes('vomiting') || lowerQuery.includes('diarrhea') ||
+    lowerQuery.includes('burn') || lowerQuery.includes('poisoning') || lowerQuery.includes('anxiety') ||
+    lowerQuery.includes('dizziness') || lowerQuery.includes('fatigue') || lowerQuery.includes('allergies')) {
+   window.location.href = `/diagnosis-app/health/?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('car') || lowerQuery.includes('automobile') || lowerQuery.includes('vehicle') ||
+        lowerQuery.includes('bike') || lowerQuery.includes('motorcycle') || lowerQuery.includes('scooter') ||
+        lowerQuery.includes('engine') || lowerQuery.includes('brake') || lowerQuery.includes('tire') ||
+        lowerQuery.includes('transmission') || lowerQuery.includes('overheating') ||
+        lowerQuery.includes('wont start') || lowerQuery.includes("won't start") ||
+        lowerQuery.includes('battery') || lowerQuery.includes('noise') || lowerQuery.includes('oil') ||
+        lowerQuery.includes('mileage') || lowerQuery.includes('vibration') || lowerQuery.includes('chain')) {
+   window.location.href = `/diagnosis-app/car/?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('home') || lowerQuery.includes('house') || lowerQuery.includes('repair') ||
+        lowerQuery.includes('tap') || lowerQuery.includes('leak') || lowerQuery.includes('faucet') ||
+        lowerQuery.includes('ac') || lowerQuery.includes('cooling') || lowerQuery.includes('hvac') ||
+        lowerQuery.includes('heating') || lowerQuery.includes('washing') || lowerQuery.includes('plumbing') ||
+        lowerQuery.includes('drain') || lowerQuery.includes('water heater')) {
+   window.location.href = `/diagnosis-app/home/?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('tech') || lowerQuery.includes('electronic') || lowerQuery.includes('gadget') ||
+        lowerQuery.includes('laptop') || lowerQuery.includes('phone') || lowerQuery.includes('smartphone') ||
+        lowerQuery.includes('wifi') || lowerQuery.includes('wi-fi') || lowerQuery.includes('computer') ||
+        lowerQuery.includes('desktop') || lowerQuery.includes('network') || lowerQuery.includes('mouse') ||
+        lowerQuery.includes('keyboard') || lowerQuery.includes('printer') || lowerQuery.includes('monitor')) {
+   window.location.href = `/diagnosis-app/tech/?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('garden') || lowerQuery.includes('pest') || lowerQuery.includes('plant') ||
+        lowerQuery.includes('irrigation') || lowerQuery.includes('lawn') || lowerQuery.includes('soil') ||
+        lowerQuery.includes('weed')) {
+   window.location.href = `/diagnosis-app/garden/?q=${encodeURIComponent(searchQuery)}`;
+  } else {
+   window.location.href = `/diagnosis-app/categories.html?q=${encodeURIComponent(searchQuery)}`;
+  }
+ }
+ 
+ const heroSearchInput = document.getElementById('heroSearchInput');
+ const searchDropdown = document.getElementById('searchDropdown');
+ const heroSearchContainer = document.getElementById('heroSearchContainer');
+ 
+ if (heroSearchInput && searchDropdown && heroSearchContainer) {
+  heroSearchInput.addEventListener('focus', function() {
+   searchDropdown.classList.add('visible');
+  });
+  
+  heroSearchInput.addEventListener('input', function() {
+   if (heroSearchInput.value.trim() === '') {
+    searchDropdown.classList.add('visible');
+   } else {
+    searchDropdown.classList.remove('visible');
+   }
+  });
+  
+  heroSearchInput.addEventListener('keydown', function(e) {
+   if (e.key === 'Enter') {
+    e.preventDefault();
+    searchDropdown.classList.remove('visible');
+    performHeroSearch();
+   }
+  });
+  
+  searchDropdown.addEventListener('click', function(e) {
+   if (e.target.classList.contains('search-dropdown-item')) {
+    const query = e.target.getAttribute('data-query');
+    heroSearchInput.value = query;
+    searchDropdown.classList.remove('visible');
+    performHeroSearch(query);
+   }
+  });
+  
+  document.addEventListener('click', function(e) {
+   if (!heroSearchContainer.contains(e.target)) {
+    searchDropdown.classList.remove('visible');
+   }
+  });
+ }
+</script>
+</body>
+</html>

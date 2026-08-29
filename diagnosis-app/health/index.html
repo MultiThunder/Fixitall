@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Health – FixItAll</title>
+ <meta name="description" content="Check your health symptoms online. Get possible causes and advice for fever, headache, stomach pain, and more."/>
+ <link rel="canonical" href="/diagnosis-app/health/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/scripts.js?v=3"></script>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true">
+   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+    <path d="M2 17l10 5 10-5"/>
+    <path d="M2 12l10 5 10-5"/>
+   </svg>
+  </div>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+  <nav class="header-nav">
+   <a href="/diagnosis-app/">Home</a>
+   <a href="/diagnosis-app/health/" class="active">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <button class="theme-toggle" aria-label="Toggle dark mode">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+   </button>
+   <button class="btn-login">Login</button>
+  </nav>
+ </header>
+
+<main class="container">
+  <div class="hero-section">
+   <div class="hero-layout">
+     <div class="hero-main">
+      <div class="breadcrumb"><span>Home -> Health</span></div>
+      <h1 class="hero-heading">How can we help you <span class="text-accent">feel better today?</span></h1>
+      <p class="hero-subtitle">Describe your symptoms and get possible causes, advice, and next steps.</p>
+      <div class="hero-search">
+       <input type="text" placeholder="Describe your health problem..." id="heroSearchInput" autocomplete="off"/>
+        <button onclick="performHeroSearch()"><span>🔍</span> Search</button>
+      </div>
+      <div class="hero-pills">
+       <span class="pill" onclick="performHeroSearch('Fever')">Fever</span>
+       <span class="pill" onclick="performHeroSearch('Headache')">Headache</span>
+       <span class="pill" onclick="performHeroSearch('Stomach pain')">Stomach pain</span>
+       <span class="pill" onclick="performHeroSearch('Knee pain')">Knee pain</span>
+       <span class="pill" onclick="performHeroSearch('Cough')">Cough</span>
+      </div>
+     </div>
+      <div class="hero-side">
+       <div class="info-card">
+         <div class="trust-badges">
+          <div class="trust-badge">
+           <div class="trust-badge-icon">✅</div>
+           <div class="trust-badge-text">
+            <strong>Trusted Information</strong>
+            <span>Based on medical knowledge and expert sources.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">🔒</div>
+           <div class="trust-badge-text">
+            <strong>Private & Secure</strong>
+            <span>Your information is safe and confidential.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">💡</div>
+           <div class="trust-badge-text">
+            <strong>Helpful Guidance</strong>
+            <span>Clear advice and next steps to help you feel better.</span>
+           </div>
+          </div>
+         </div>
+         <div class="hero-image">
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="120" cy="120" r="100" fill="#F3E8FF" opacity="0.25"/>
+           <path d="M120 40C120 40 60 80 60 120C60 160 90 180 90 200" stroke="#8B5CF6" stroke-width="10" stroke-linecap="round" fill="none"/>
+           <path d="M120 40C120 40 180 80 180 120C180 160 150 180 150 200" stroke="#8B5CF6" stroke-width="10" stroke-linecap="round" fill="none"/>
+           <path d="M60 120H180" stroke="#8B5CF6" stroke-width="10" stroke-linecap="round"/>
+           <circle cx="120" cy="65" r="28" fill="#8B5CF6"/>
+           <circle cx="120" cy="65" r="16" fill="#F3E8FF"/>
+           <circle cx="90" cy="200" r="14" fill="#8B5CF6"/>
+           <circle cx="150" cy="200" r="14" fill="#8B5CF6"/>
+          </svg>
+         </div>
+       </div>
+      </div>
+   </div>
+  </div>
+
+    <div class="notice-banner">
+     <span class="notice-icon">ℹ️</span>
+     <span>Important: This tool provides general information and is not a substitute for professional medical advice, diagnosis, or treatment. If you have a medical emergency, please call your local emergency number.</span>
+    </div>
+
+  <div class="section-title" style="text-align:left;margin-bottom:20px;">
+   <h2 style="font-size:18px;">Popular Symptoms</h2>
+   <a href="#" class="view-all-link">View all symptoms →</a>
+  </div>
+
+  <div class="symptom-grid">
+    <a href="/diagnosis-app/health/fever.html" class="symptom-card">
+     <div class="icon">🤒</div>
+     <h3>Fever</h3>
+     <p>High temperature, chills</p>
+    </a>
+    <a href="/diagnosis-app/health/headache.html" class="symptom-card">
+     <div class="icon">🤕</div>
+     <h3>Headache</h3>
+     <p>Migraine, tension, sinus</p>
+    </a>
+    <a href="/diagnosis-app/health/stomach-pain.html" class="symptom-card">
+     <div class="icon">🤢</div>
+     <h3>Stomach Pain</h3>
+     <p>Cramps, nausea, digestion</p>
+    </a>
+    <a href="/diagnosis-app/health/knee-pain.html" class="symptom-card">
+     <div class="icon">🦴</div>
+     <h3>Knee Pain</h3>
+     <p>Joint pain, swelling</p>
+    </a>
+    <a href="#" class="symptom-card">
+     <div class="icon">🤧</div>
+     <h3>Cold & Flu</h3>
+     <p>Runny nose, body ache</p>
+    </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🤯</div>
+    <h3>Migraine</h3>
+    <p>Severe headache, sensitivity</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">💩</div>
+    <h3>Diarrhea</h3>
+    <p>Loose stools, dehydration</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">😴</div>
+    <h3>Insomnia</h3>
+    <p>Trouble sleeping, fatigue</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">😰</div>
+    <h3>Anxiety</h3>
+    <p>Restlessness, panic attacks</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">😵</div>
+    <h3>Dizziness</h3>
+    <p>Vertigo, lightheadedness</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">💔</div>
+    <h3>Chest Pain</h3>
+    <p>Tightness, heartburn</p>
+   </a>
+    <a href="#" class="symptom-card hidden-article">
+     <div class="icon">🤧</div>
+     <h3>Cough & Cold</h3>
+     <p>Dry cough, congestion</p>
+    </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🫁</div>
+    <h3>Back Pain</h3>
+    <p>Lower back, upper back</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🤮</div>
+    <h3>Vomiting</h3>
+    <p>Nausea, food poisoning</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🌸</div>
+    <h3>Allergies</h3>
+    <p>Sneezing, itchy eyes, rash</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🔋</div>
+    <h3>Fatigue</h3>
+    <p>Chronic tiredness, low energy</p>
+   </a>
+ </div>
+
+  <div class="view-all-wrap">
+   <button class="btn-outline" id="showAllBtn">Show All Symptoms</button>
+  </div>
+
+  <div class="privacy-banner">
+   <span class="privacy-icon">🔒</span>
+   <span>Your privacy matters. All health information you provide is encrypted and never shared with third parties.</span>
+  </div>
+ </main>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social">
+    <span>𝕏</span>
+    <span>in</span>
+    <span>𝕏</span>
+    <span>𝕏</span>
+   </div>
+  </div>
+   <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="/diagnosis-app/">Home</a>
+    <a href="/diagnosis-app/categories.html">Categories</a>
+    <a href="/diagnosis-app/how-it-works/">How It Works</a>
+    <a href="/diagnosis-app/blog/">Blog</a>
+    <a href="/diagnosis-app/about/">About Us</a>
+   </div>
+  <div class="footer-col">
+   <h4>Categories</h4>
+   <a href="/diagnosis-app/health/">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/garden/">Garden</a>
+   <a href="/diagnosis-app/categories.html">More</a>
+  </div>
+   <div class="footer-col">
+    <h4>Resources</h4>
+    <a href="/diagnosis-app/how-it-works/">Guides</a>
+    <a href="/diagnosis-app/faq.html">FAQs</a>
+    <a href="/diagnosis-app/disclaimer.html">Disclaimer</a>
+    <a href="/diagnosis-app/privacy.html">Privacy Policy</a>
+    <a href="/diagnosis-app/terms.html">Terms of Use</a>
+   </div>
+ </div>
+ <div class="footer-bottom">– 2024 FixItAll. All rights reserved.</div>
+</footer>
+
+<script>
+ function performHeroSearch(query) {
+  let searchQuery = query;
+  
+  if (!searchQuery) {
+   searchQuery = document.getElementById('heroSearchInput') ? 
+    document.getElementById('heroSearchInput').value : null;
+  }
+  
+  if (!searchQuery) {
+   return;
+  }
+  
+  searchQuery = searchQuery.trim();
+  const lowerQuery = searchQuery.toLowerCase();
+  
+  if (lowerQuery.includes('fever') || lowerQuery.includes('cold') || 
+    lowerQuery.includes('flu') || lowerQuery.includes('sore throat') ||
+    lowerQuery.includes('influenza') || lowerQuery.includes('temperature') ||
+    lowerQuery.includes('chills')) {
+   window.location.href = `health/fever.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('headache') || lowerQuery.includes('migraine') ||
+        lowerQuery.includes('tension') || lowerQuery.includes('sinus')) {
+   window.location.href = `health/headache.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('stomach') || lowerQuery.includes('nausea') ||
+        lowerQuery.includes('vomiting') || lowerQuery.includes('digestion') ||
+        lowerQuery.includes('indigestion')) {
+   window.location.href = `health/stomach-pain.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('knee') || lowerQuery.includes('joint') ||
+        lowerQuery.includes('arthritis') || lowerQuery.includes('pain')) {
+   window.location.href = `health/knee-pain.html?q=${encodeURIComponent(searchQuery)}`;
+  } else {
+   window.location.href = `health/?q=${encodeURIComponent(searchQuery)}`;
+  }
+ }
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+  const heroSearchInput = document.getElementById('heroSearchInput');
+  if (heroSearchInput) {
+   heroSearchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+     performHeroSearch();
+    }
+   });
+  }
+
+  // Show all problems toggle
+  const showAllBtn = document.getElementById('showAllBtn');
+  const hiddenCards = document.querySelectorAll('.symptom-grid .symptom-card.hidden-article');
+  let isExpanded = false;
+  
+  if (showAllBtn && hiddenCards.length > 0) {
+   showAllBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+    if (isExpanded) {
+     hiddenCards.forEach((card, index) => {
+      card.classList.remove('hidden-article');
+      card.style.setProperty('--reveal-index', index);
+      card.style.animation = 'none';
+      card.offsetHeight;
+      card.style.animation = 'articleReveal 0.5s ease';
+      card.style.animationDelay = `calc(var(--reveal-index, 0) * 0.08s)`;
+      
+      const handleAnimationEnd = () => {
+       card.classList.add('revealed');
+       card.style.animation = '';
+       card.style.animationDelay = '';
+       card.removeEventListener('animationend', handleAnimationEnd);
+      };
+      
+      card.addEventListener('animationend', handleAnimationEnd);
+     });
+     showAllBtn.textContent = 'Show Less';
+    } else {
+     const revealedCards = document.querySelectorAll('.symptom-grid .symptom-card.revealed');
+     revealedCards.forEach(card => {
+      card.classList.remove('revealed');
+      card.classList.add('hidden-article');
+      card.style.removeProperty('--reveal-index');
+     });
+     showAllBtn.textContent = 'Show All Symptoms';
+    }
+   });
+  }
+ });
+</script>
+</body>
+</html>

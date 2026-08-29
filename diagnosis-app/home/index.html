@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Home Repairs – FixItAll</title>
+ <meta name="description" content="Diagnose household repair problems. Leaking tap, AC not cooling, washing machine and more."/>
+ <link rel="canonical" href="/diagnosis-app/home/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/scripts.js?v=3"></script>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div></a>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+  <nav class="header-nav">
+   <a href="/diagnosis-app/">Home</a>
+   <a href="/diagnosis-app/health/">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/" class="active">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <button class="theme-toggle" aria-label="Toggle dark mode"><span class="sun-icon">☀️</span><span class="moon-icon">🌙</span></button>
+   <button class="btn-login">Login</button>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="hero-section">
+   <div class="hero-layout">
+     <div class="hero-main">
+      <div class="breadcrumb"><span>Home -> Home Repairs</span></div>
+      <h1 class="hero-heading">How can we help you <span class="text-accent">feel better today?</span></h1>
+      <p class="hero-subtitle">Describe your home repair problem and get possible causes, advice, and next steps.</p>
+      <div class="hero-search">
+       <input type="text" placeholder="Describe your home repair problem..." id="heroSearchInput" autocomplete="off"/>
+        <button onclick="performHeroSearch()"><span>🔍</span> Search</button>
+      </div>
+      <div class="hero-pills">
+       <span class="pill" onclick="performHeroSearch('Leaking tap')">Leaking tap</span>
+       <span class="pill" onclick="performHeroSearch('AC not cooling')">AC not cooling</span>
+       <span class="pill" onclick="performHeroSearch('Washing machine')">Washing machine</span>
+       <span class="pill" onclick="performHeroSearch('Water heater')">Water heater</span>
+       <span class="pill" onclick="performHeroSearch('Clogged drain')">Clogged drain</span>
+      </div>
+     </div>
+      <div class="hero-side">
+       <div class="info-card">
+         <div class="trust-badges">
+          <div class="trust-badge">
+           <div class="trust-badge-icon">✅</div>
+           <div class="trust-badge-text">
+            <strong>Trusted Information</strong>
+            <span>Based on home repair knowledge and expert sources.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">🔒</div>
+           <div class="trust-badge-text">
+            <strong>Private & Secure</strong>
+            <span>Your information is safe and confidential.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">💡</div>
+           <div class="trust-badge-text">
+            <strong>Helpful Guidance</strong>
+            <span>Clear advice and next steps to fix your problem.</span>
+           </div>
+          </div>
+         </div>
+         <div class="hero-image">
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="120" cy="120" r="100" fill="#FFF7ED" opacity="0.25"/>
+           <path d="M120 55L50 110V200H190V110L120 55Z" fill="#F97316"/>
+           <path d="M120 55V200" stroke="#FDBA74" stroke-width="5"/>
+           <rect x="85" y="130" width="70" height="70" rx="4" fill="#FDBA74"/>
+           <rect x="105" y="100" width="30" height="35" rx="3" fill="#FFFBEB"/>
+           <rect x="95" y="155" width="20" height="45" rx="3" fill="#7C2D12"/>
+           <rect x="125" y="155" width="20" height="45" rx="3" fill="#7C2D12"/>
+          </svg>
+         </div>
+       </div>
+      </div>
+   </div>
+  </div>
+
+    <div class="notice-banner">
+     <span class="notice-icon">ℹ️</span>
+     <span>Important: This tool provides general information and is not a substitute for professional home repair advice, diagnosis, or service. If you have an emergency, please call your local emergency number.</span>
+    </div>
+
+  <div class="section-title" style="text-align:left;margin-bottom:20px;">
+   <h2 style="font-size:18px;">Popular Problems</h2>
+  </div>
+
+ <div class="symptom-grid">
+   <a href="/diagnosis-app/home/leaking-tap.html" class="symptom-card">
+    <div class="icon">🚰</div>
+    <h3>Leaking Tap</h3>
+    <p>Dripping, running water</p>
+   </a>
+   <a href="/diagnosis-app/home/ac-not-cooling.html" class="symptom-card">
+    <div class="icon">❄️</div>
+    <h3>A/C Not Cooling</h3>
+    <p>Weak airflow, warm air</p>
+   </a>
+   <a href="/diagnosis-app/home/washing-machine.html" class="symptom-card">
+    <div class="icon">🧺</div>
+    <h3>Washing Machine</h3>
+    <p>Not spinning, leaking, noise</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🚿</div>
+    <h3>Water Heater</h3>
+    <p>No hot water, strange noise</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🚫</div>
+    <h3>Clogged Drain</h3>
+    <p>Slow drainage, bad odor</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">⚡</div>
+    <h3>Electrical Outlet</h3>
+    <p>Not working, sparking, loose</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🚪</div>
+    <h3>Door Issues</h3>
+    <p>Sticking, squeaking, won't latch</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🪟</div>
+    <h3>Window Problems</h3>
+    <p>Stuck, drafty, broken seal</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🧱</div>
+    <h3>Wall Damage</h3>
+    <p>Cracks, holes, peeling paint</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🏠</div>
+    <h3>Roof Leak</h3>
+    <p>Water stains, dripping ceiling</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🏗️</div>
+    <h3>Foundation Cracks</h3>
+    <p>Uneven floors, sticking doors</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🚽</div>
+    <h3>Toilet Problems</h3>
+    <p>Running, clogged, leaking</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🗑️</div>
+    <h3>Garbage Disposal</h3>
+    <p>Not grinding, jammed, leaking</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🚗</div>
+    <h3>Garage Door</h3>
+    <p>Won't open, noisy, broken spring</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🐛</div>
+    <h3>Pest Control</h3>
+    <p>Ants, termites, rodents</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🔨</div>
+    <h3>Drywall Repair</h3>
+    <p>Holes, cracks, water damage</p>
+   </a>
+  </div>
+
+  <div class="view-all-wrap">
+   <button class="btn-outline" id="showAllBtn">Show All Problems</button>
+  </div>
+
+  <div class="privacy-banner">
+   <span class="privacy-icon">🔒</span>
+   <span>Your privacy matters. All information you provide is encrypted and never shared with third parties.</span>
+  </div>
+ </main>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social"><a href="https://twitter.com/fixitall" target="_blank" rel="noopener">𝕏</a><a href="https://linkedin.com/company/fixitall" target="_blank" rel="noopener">in</a><a href="https://facebook.com/fixitall" target="_blank" rel="noopener">📘</a><a href="https://instagram.com/fixitall" target="_blank" rel="noopener">📸</a></div>
+  </div>
+  <div class="footer-col"><h4>Quick Links</h4><a href="/diagnosis-app/">Home</a><a href="/diagnosis-app/categories.html">Categories</a><a href="/diagnosis-app/how-it-works/">How It Works</a><a href="/diagnosis-app/blog/">Blog</a><a href="/diagnosis-app/about/">About Us</a></div>
+  <div class="footer-col"><h4>Categories</h4><a href="/diagnosis-app/health/">Health</a><a href="/diagnosis-app/car/">Automobile</a><a href="/diagnosis-app/home/">Home Repairs</a><a href="/diagnosis-app/tech/">Electronics</a><a href="/diagnosis-app/garden/">Garden</a><a href="/diagnosis-app/categories.html">More</a></div>
+  <div class="footer-col"><h4>Resources</h4><a href="/diagnosis-app/how-it-works/">Guides</a><a href="/diagnosis-app/faq.html">FAQs</a><a href="/diagnosis-app/disclaimer.html">Disclaimer</a><a href="/diagnosis-app/privacy.html">Privacy Policy</a><a href="/diagnosis-app/terms.html">Terms of Use</a></div>
+ </div>
+  <div class="footer-bottom">© 2024 FixItAll. All rights reserved.</div>
+ </footer>
+ <script>
+ function performHeroSearch(query) {
+  let searchQuery = query;
+  
+  if (!searchQuery) {
+   searchQuery = document.getElementById('heroSearchInput') ? 
+    document.getElementById('heroSearchInput').value : null;
+  }
+  
+  if (!searchQuery) {
+   return;
+  }
+  
+  searchQuery = searchQuery.trim();
+  const lowerQuery = searchQuery.toLowerCase();
+  
+  if (lowerQuery.includes('leak') || lowerQuery.includes('drip') || lowerQuery.includes('tap') || lowerQuery.includes('faucet')) {
+   window.location.href = `/home/leaking-tap.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('ac') || lowerQuery.includes('air condition') || lowerQuery.includes('cooling') || lowerQuery.includes('airflow')) {
+   window.location.href = `/home/ac-not-cooling.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('wash') || lowerQuery.includes('laundry') || lowerQuery.includes('spin') || lowerQuery.includes('machine')) {
+   window.location.href = `/home/washing-machine.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('water heat') || lowerQuery.includes('hot water') || lowerQuery.includes('heater')) {
+   window.location.href = `/home/?q=${encodeURIComponent(searchQuery)}`;
+  } else {
+   window.location.href = `/home/?q=${encodeURIComponent(searchQuery)}`;
+  }
+ }
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+  const heroSearchInput = document.getElementById('heroSearchInput');
+  if (heroSearchInput) {
+   heroSearchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+     performHeroSearch();
+    }
+   });
+  }
+
+  // Show all problems toggle
+  const showAllBtn = document.getElementById('showAllBtn');
+  const hiddenCards = document.querySelectorAll('.symptom-grid .symptom-card.hidden-article');
+  let isExpanded = false;
+  
+  if (showAllBtn && hiddenCards.length > 0) {
+   showAllBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+    if (isExpanded) {
+     hiddenCards.forEach((card, index) => {
+      card.classList.remove('hidden-article');
+      card.style.setProperty('--reveal-index', index);
+      card.style.animation = 'none';
+      card.offsetHeight;
+      card.style.animation = 'articleReveal 0.5s ease';
+      card.style.animationDelay = `calc(var(--reveal-index, 0) * 0.08s)`;
+      
+      const handleAnimationEnd = () => {
+       card.classList.add('revealed');
+       card.style.animation = '';
+       card.style.animationDelay = '';
+       card.removeEventListener('animationend', handleAnimationEnd);
+      };
+      
+      card.addEventListener('animationend', handleAnimationEnd);
+     });
+     showAllBtn.textContent = 'Show Less';
+    } else {
+     const revealedCards = document.querySelectorAll('.symptom-grid .symptom-card.revealed');
+     revealedCards.forEach(card => {
+      card.classList.remove('revealed');
+      card.classList.add('hidden-article');
+      card.style.removeProperty('--reveal-index');
+     });
+     showAllBtn.textContent = 'Show All Problems';
+    }
+   });
+  }
+ });
+</script>
+</body>
+</html>

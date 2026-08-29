@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Electronics – FixItAll</title>
+ <meta name="description" content="Diagnose electronics and gadget problems. Laptop, phone, wifi issues and more."/>
+ <link rel="canonical" href="/diagnosis-app/tech/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/scripts.js?v=3"></script>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div></a>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+  <nav class="header-nav">
+   <a href="/diagnosis-app/">Home</a>
+   <a href="/diagnosis-app/health/">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/" class="active">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <button class="theme-toggle" aria-label="Toggle dark mode"><span class="sun-icon">☀️</span><span class="moon-icon">🌙</span></button>
+   <button class="btn-login">Login</button>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="hero-section">
+   <div class="hero-layout">
+     <div class="hero-main">
+      <div class="breadcrumb"><span>Home -> Electronics</span></div>
+      <h1 class="hero-heading">How can we help you <span class="text-accent">feel better today?</span></h1>
+      <p class="hero-subtitle">Describe your electronics problem and get possible causes, advice, and next steps.</p>
+      <div class="hero-search">
+       <input type="text" placeholder="Describe your electronics problem..." id="heroSearchInput" autocomplete="off"/>
+        <button onclick="performHeroSearch()"><span>🔍</span> Search</button>
+      </div>
+      <div class="hero-pills">
+       <span class="pill" onclick="performHeroSearch('Laptop')">Laptop</span>
+       <span class="pill" onclick="performHeroSearch('Phone')">Phone</span>
+       <span class="pill" onclick="performHeroSearch('WiFi')">WiFi</span>
+       <span class="pill" onclick="performHeroSearch('Desktop')">Desktop</span>
+       <span class="pill" onclick="performHeroSearch('Printer')">Printer</span>
+      </div>
+     </div>
+      <div class="hero-side">
+       <div class="info-card">
+         <div class="trust-badges">
+          <div class="trust-badge">
+           <div class="trust-badge-icon">✅</div>
+           <div class="trust-badge-text">
+            <strong>Trusted Information</strong>
+            <span>Based on tech knowledge and expert sources.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">🔒</div>
+           <div class="trust-badge-text">
+            <strong>Private & Secure</strong>
+            <span>Your information is safe and confidential.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">💡</div>
+           <div class="trust-badge-text">
+            <strong>Helpful Guidance</strong>
+            <span>Clear advice and next steps to fix your problem.</span>
+           </div>
+          </div>
+         </div>
+         <div class="hero-image">
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="120" cy="120" r="100" fill="#F0FDF4" opacity="0.25"/>
+           <rect x="35" y="60" width="170" height="110" rx="10" fill="#16A34A"/>
+           <rect x="45" y="70" width="150" height="90" rx="4" fill="#BBF7D0"/>
+           <rect x="20" y="170" width="200" height="14" rx="7" fill="#15803D"/>
+           <circle cx="120" cy="195" r="10" fill="#22C55E"/>
+          </svg>
+         </div>
+       </div>
+      </div>
+   </div>
+  </div>
+
+    <div class="notice-banner">
+     <span class="notice-icon">ℹ️</span>
+     <span>Important: This tool provides general information and is not a substitute for professional tech support advice, diagnosis, or service. If you have an emergency, please call your local emergency number.</span>
+    </div>
+
+  <div class="section-title" style="text-align:left;margin-bottom:20px;">
+   <h2 style="font-size:18px;">Popular Devices</h2>
+  </div>
+
+  <div class="symptom-grid">
+   <a href="/diagnosis-app/tech/laptop.html" class="symptom-card">
+    <div class="icon">💻</div>
+    <h3>Laptop</h3>
+    <p>Slow, overheating, won't boot</p>
+   </a>
+   <a href="/diagnosis-app/tech/phone.html" class="symptom-card">
+    <div class="icon">📱</div>
+    <h3>Phone</h3>
+    <p>Battery drain, slow, cracked screen</p>
+   </a>
+   <a href="/diagnosis-app/tech/wifi.html" class="symptom-card">
+    <div class="icon">📶</div>
+    <h3>WiFi</h3>
+    <p>No internet, slow speed, drops</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🖥️</div>
+    <h3>Desktop</h3>
+    <p>BSOD, slow, overheating</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🖱️</div>
+    <h3>Mouse</h3>
+    <p>Lag, not working, double click</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">⌨️</div>
+    <h3>Keyboard</h3>
+    <p>Keys stuck, not typing, lag</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🖨️</div>
+    <h3>Printer</h3>
+    <p>Not printing, paper jam, offline</p>
+   </a>
+   <a href="#" class="symptom-card">
+    <div class="icon">🎧</div>
+    <h3>Headphones</h3>
+    <p>No sound, static, mic issues</p>
+   </a>
+    <a href="#" class="symptom-card hidden-article">
+     <div class="icon">🖥️</div>
+     <h3>Monitor</h3>
+     <p>Flickering, no signal, dead pixels</p>
+    </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">💾</div>
+    <h3>Hard Drive</h3>
+    <p>Clicking, not detected, slow</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🔌</div>
+    <h3>Charging Issues</h3>
+    <p>Not charging, slow charge, port</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🎮</div>
+    <h3>Gaming Console</h3>
+    <p>Overheating, disc read, errors</p>
+   </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">📷</div>
+    <h3>Camera</h3>
+    <p>Blurry, not focusing, sensor</p>
+   </a>
+    <a href="#" class="symptom-card hidden-article">
+     <div class="icon">📡</div>
+     <h3>Bluetooth Issues</h3>
+     <p>Not pairing, dropping, audio lag</p>
+    </a>
+   <a href="#" class="symptom-card hidden-article">
+    <div class="icon">🦠</div>
+    <h3>Virus & Malware</h3>
+    <p>Slow performance, popups, errors</p>
+   </a>
+    <a href="#" class="symptom-card hidden-article">
+     <div class="icon">📺</div>
+     <h3>Smart TV</h3>
+     <p>Apps not loading, no signal</p>
+    </a>
+  </div>
+
+  <div class="view-all-wrap">
+   <button class="btn-outline" id="showAllBtn">Show All Problems</button>
+  </div>
+
+  <div class="privacy-banner">
+   <span class="privacy-icon">🔒</span>
+   <span>Your privacy matters. All information you provide is encrypted and never shared with third parties.</span>
+  </div>
+ </main>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social"><a href="https://twitter.com/fixitall" target="_blank" rel="noopener">𝕏</a><a href="https://linkedin.com/company/fixitall" target="_blank" rel="noopener">in</a><a href="https://facebook.com/fixitall" target="_blank" rel="noopener">📘</a><a href="https://instagram.com/fixitall" target="_blank" rel="noopener">📸</a></div>
+  </div>
+  <div class="footer-col"><h4>Quick Links</h4><a href="/diagnosis-app/">Home</a><a href="/diagnosis-app/categories.html">Categories</a><a href="/diagnosis-app/how-it-works/">How It Works</a><a href="/diagnosis-app/blog/">Blog</a><a href="/diagnosis-app/about/">About Us</a></div>
+  <div class="footer-col"><h4>Categories</h4><a href="/diagnosis-app/health/">Health</a><a href="/diagnosis-app/car/">Automobile</a><a href="/diagnosis-app/home/">Home Repairs</a><a href="/diagnosis-app/tech/">Electronics</a><a href="/diagnosis-app/garden/">Garden</a><a href="/diagnosis-app/categories.html">More</a></div>
+  <div class="footer-col"><h4>Resources</h4><a href="/diagnosis-app/how-it-works/">Guides</a><a href="/diagnosis-app/faq.html">FAQs</a><a href="/diagnosis-app/disclaimer.html">Disclaimer</a><a href="/diagnosis-app/privacy.html">Privacy Policy</a><a href="/diagnosis-app/terms.html">Terms of Use</a></div>
+ </div>
+ <div class="footer-bottom">– 2024 FixItAll. All rights reserved.</div>
+</footer>
+
+<script>
+ function performHeroSearch(query) {
+  let searchQuery = query;
+  
+  if (!searchQuery) {
+   searchQuery = document.getElementById('heroSearchInput') ? 
+    document.getElementById('heroSearchInput').value : null;
+  }
+  
+  if (!searchQuery) {
+   return;
+  }
+  
+  searchQuery = searchQuery.trim();
+  const lowerQuery = searchQuery.toLowerCase();
+  
+  if (lowerQuery.includes('laptop') || lowerQuery.includes('notebook') || lowerQuery.includes('macbook')) {
+   window.location.href = `/tech/laptop.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('phone') || lowerQuery.includes('mobile') || lowerQuery.includes('iphone') || lowerQuery.includes('android')) {
+   window.location.href = `/tech/phone.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('wifi') || lowerQuery.includes('wireless') || lowerQuery.includes('internet') || lowerQuery.includes('network')) {
+   window.location.href = `/tech/wifi.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('desktop') || lowerQuery.includes('pc') || lowerQuery.includes('computer')) {
+   window.location.href = `/tech/?q=${encodeURIComponent(searchQuery)}`;
+  } else {
+   window.location.href = `/tech/?q=${encodeURIComponent(searchQuery)}`;
+  }
+ }
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+  const heroSearchInput = document.getElementById('heroSearchInput');
+  if (heroSearchInput) {
+   heroSearchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+     performHeroSearch();
+    }
+   });
+  }
+
+  // Show all problems toggle
+  const showAllBtn = document.getElementById('showAllBtn');
+  const hiddenCards = document.querySelectorAll('.symptom-grid .symptom-card.hidden-article');
+  let isExpanded = false;
+  
+  if (showAllBtn && hiddenCards.length > 0) {
+   showAllBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+    if (isExpanded) {
+     hiddenCards.forEach((card, index) => {
+      card.classList.remove('hidden-article');
+      card.style.setProperty('--reveal-index', index);
+      card.style.animation = 'none';
+      card.offsetHeight;
+      card.style.animation = 'articleReveal 0.5s ease';
+      card.style.animationDelay = `calc(var(--reveal-index, 0) * 0.08s)`;
+      
+      const handleAnimationEnd = () => {
+       card.classList.add('revealed');
+       card.style.animation = '';
+       card.style.animationDelay = '';
+       card.removeEventListener('animationend', handleAnimationEnd);
+      };
+      
+      card.addEventListener('animationend', handleAnimationEnd);
+     });
+     showAllBtn.textContent = 'Show Less';
+    } else {
+     const revealedCards = document.querySelectorAll('.symptom-grid .symptom-card.revealed');
+     revealedCards.forEach(card => {
+      card.classList.remove('revealed');
+      card.classList.add('hidden-article');
+      card.style.removeProperty('--reveal-index');
+     });
+     showAllBtn.textContent = 'Show All Devices';
+    }
+   });
+  }
+ });
+</script>
+</body>
+</html>

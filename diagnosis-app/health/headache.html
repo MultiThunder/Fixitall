@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Headache – Diagnosis Assistant – FixItAll</title>
+ <meta name="description" content="Answer a few questions to get possible causes for your headache. AI-powered symptom analysis."/>
+ <link rel="canonical" href="/health/headache/diagnose/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div></a>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+ <nav class="header-nav">
+  <a href="/diagnosis-app/">Home</a>
+  <a href="/diagnosis-app/../health/" class="active">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <button class="theme-toggle" aria-label="Toggle dark mode"><span class="sun-icon">☀️</span><span class="moon-icon">🌙</span></button>
+   <button class="btn-login">Login</button>
+ </nav>
+</header>
+
+<main class="container">
+  <div class="breadcrumb"><span>Home -> Health -> Headache – Diagnosis Assistant</span></div>
+
+ <div class="diagnosis-header">
+  <h1>Headache – Diagnosis Assistant</h1>
+  <p>Answer a few questions to get possible causes</p>
+ </div>
+
+ <div class="progress-indicator">
+  <div class="progress-step"><div class="progress-circle active" id="dot-1">1</div></div>
+  <div class="progress-line" id="line-1"></div>
+  <div class="progress-step"><div class="progress-circle" id="dot-2">2</div></div>
+  <div class="progress-line" id="line-2"></div>
+  <div class="progress-step"><div class="progress-circle" id="dot-3">3</div></div>
+ </div>
+
+ <div id="step-1" class="question-card">
+  <h3>Q1. Where is the pain located?</h3>
+  <p class="subtitle">Select one</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Forehead / Temples</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Back of head</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">One side only</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Behind the eyes</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">All over</span></label>
+  </div>
+  <div class="card-actions"><span></span><button class="btn-primary" onclick="nextStep(2)">Next Question ?</button></div>
+ </div>
+
+ <div id="step-2" class="question-card hidden">
+  <h3>Q2. How would you describe the pain?</h3>
+  <p class="subtitle">Select all that apply</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Throbbing / Pulsing</span></label>
+   <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Constant pressure</span></label>
+   <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Sharp / Stabbing</span></label>
+   <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Worse with movement</span></label>
+   <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Nausea or vomiting</span></label>
+   <label class="option-item" onclick="toggleCheck(this)"><input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Sensitivity to light</span></label>
+  </div>
+  <div class="card-actions"><button class="btn-secondary" onclick="prevStep(1)">? ? ← ← Back</button><button class="btn-primary" onclick="nextStep(3)">Next Question ?</button></div>
+ </div>
+
+ <div id="step-3" class="question-card hidden">
+  <h3>Q3. How long have you had this headache?</h3>
+  <p class="subtitle">Select one</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q3"/><div class="option-radio"></div><span class="option-label">A few hours</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q3"/><div class="option-radio"></div><span class="option-label">1–2 days</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q3"/><div class="option-radio"></div><span class="option-label">3–7 days</span></label>
+   <label class="option-item" onclick="toggleRadio(this)"><input type="radio" name="q3"/><div class="option-radio"></div><span class="option-label">More than a week</span></label>
+  </div>
+  <div class="card-actions"><button class="btn-secondary" onclick="prevStep(2)">? ? ← ← Back</button><button class="btn-primary" onclick="showResult()">🔍 🔍 Get Results</button></div>
+ </div>
+
+ <div id="result" class="hidden">
+  <div class="result-header">
+   <h1>Possible Causes</h1>
+   <p>Based on your answers</p>
+  </div>
+  <div class="result-layout">
+   <div class="result-main">
+    <div class="probability-list">
+     <div class="probability-item top">
+      <div class="probability-header"><h4>Tension Headache</h4><span class="probability-value">55%</span></div>
+      <div class="probability-bar"><div class="probability-fill" style="width:55%"></div></div>
+      <p class="probability-subtitle">Most likely cause of your symptoms.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header"><h4>Migraine</h4><span class="probability-value">30%</span></div>
+      <div class="probability-bar"><div class="probability-fill" style="width:30%"></div></div>
+      <p class="probability-subtitle">Possible cause.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header"><h4>Sinus Headache</h4><span class="probability-value">10%</span></div>
+      <div class="probability-bar"><div class="probability-fill" style="width:10%"></div></div>
+      <p class="probability-subtitle">Less likely but possible.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header"><h4>Other Causes</h4><span class="probability-value">5%</span></div>
+      <div class="probability-bar"><div class="probability-fill" style="width:5%"></div></div>
+      <p class="probability-subtitle">Rare possibilities.</p>
+     </div>
+    </div>
+   </div>
+   <div class="side-cards">
+    <div class="advice-card success-card">
+     <h4>✅ What You Can Do</h4>
+     <ul>
+      <li>Rest in a dark, quiet room</li>
+      <li>Ibuprofen (400mg) or Paracetamol</li>
+      <li>Apply cold compress to forehead</li>
+      <li>Stay hydrated – drink water</li>
+      <li>Take breaks from screens every 30 min</li>
+     </ul>
+    </div>
+    <div class="advice-card warning-card">
+     <h4>🏥 When to See a Doctor</h4>
+     <ul>
+      <li>Headache is sudden and severe ("thunderclap")</li>
+      <li>Accompanied by fever and stiff neck</li>
+      <li>Vision changes or confusion</li>
+      <li>Headaches increasing in frequency</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div class="disclaimer"><span class="disclaimer-icon">⚠</span><span>Disclaimer: Not a substitute for professional medical advice. These are possible causes based on your symptoms.</span></div>
+  <div class="view-all-wrap"><a href="/diagnosis-app/headache.html" class="btn-outline">↺ Start Over</a></div>
+ </div>
+
+ <div class="disclaimer" style="margin-top:20px;background:var(--success-soft);border-color:var(--success-border);">
+  <span class="disclaimer-icon">⚠</span><span>Your information is safe and anonymous.</span>
+ </div>
+</main>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social"><a href="https://twitter.com/fixitall" target="_blank" rel="noopener">𝕏</a><a href="https://linkedin.com/company/fixitall" target="_blank" rel="noopener">in</a><a href="https://facebook.com/fixitall" target="_blank" rel="noopener">📘</a><a href="https://instagram.com/fixitall" target="_blank" rel="noopener">📸</a></div>
+  </div>
+  <div class="footer-col"><h4>Quick Links</h4><a href="/diagnosis-app/">Home</a><a href="/diagnosis-app/categories.html">Categories</a><a href="/diagnosis-app/how-it-works/">How It Works</a><a href="/diagnosis-app/blog/">Blog</a><a href="/diagnosis-app/about/">About Us</a></div>
+  <div class="footer-col"><h4>Categories</h4><a href="/diagnosis-app/health/">Health</a><a href="/diagnosis-app/car/">Automobile</a><a href="/diagnosis-app/home/">Home Repairs</a><a href="/diagnosis-app/tech/">Electronics</a><a href="/diagnosis-app/categories.html">More</a></div>
+  <div class="footer-col"><h4>Resources</h4><a href="/diagnosis-app/how-it-works/">Guides</a><a href="/diagnosis-app/faq.html">FAQs</a><a href="/diagnosis-app/disclaimer.html">Disclaimer</a><a href="/diagnosis-app/privacy.html">Privacy Policy</a><a href="/diagnosis-app/terms.html">Terms of Use</a></div>
+ </div>
+ <div class="footer-bottom">– 2024 FixItAll. All rights reserved.</div>
+</footer>
+
+<script src="/diagnosis.js?v=3"></script>
+<script src="/scripts.js?v=3"></script>
+</body>
+</html>

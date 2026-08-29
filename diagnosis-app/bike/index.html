@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Bike – FixItAll</title>
+ <meta name="description" content="Diagnose Bike and motorcycle problems. Chain noise, poor mileage and more."/>
+ <link rel="canonical" href="/automobile/Bike/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/scripts.js?v=3"></script>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div></a>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+  <nav class="header-nav">
+   <a href="/diagnosis-app/">Home</a>
+   <a href="/diagnosis-app/health/">Health</a>
+   <a href="../car/" class="active">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <button class="theme-toggle" aria-label="Toggle dark mode"><span class="sun-icon">☀️</span><span class="moon-icon">🌙</span></button>
+   <button class="btn-login">Login</button>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="hero-section">
+   <div class="hero-layout">
+     <div class="hero-main">
+      <div class="breadcrumb"><span>Home -> Bike</span></div>
+      <h1 class="hero-heading">How can we help you <span class="text-accent">feel better today?</span></h1>
+      <p class="hero-subtitle">Describe your bike problem and get possible causes, advice, and next steps.</p>
+      <div class="hero-search">
+       <input type="text" placeholder="Describe your bike problem..." id="heroSearchInput" autocomplete="off"/>
+        <button onclick="performHeroSearch()"><span>🔍</span> Search</button>
+      </div>
+      <div class="hero-pills">
+       <span class="pill" onclick="performHeroSearch('Chain noise')">Chain noise</span>
+       <span class="pill" onclick="performHeroSearch('Poor mileage')">Poor mileage</span>
+       <span class="pill" onclick="performHeroSearch('Won't start')">Won't start</span>
+       <span class="pill" onclick="performHeroSearch('Brake issues')">Brake issues</span>
+       <span class="pill" onclick="performHeroSearch('Warning lights')">Warning lights</span>
+      </div>
+     </div>
+      <div class="hero-side">
+       <div class="info-card">
+         <div class="trust-badges">
+          <div class="trust-badge">
+           <div class="trust-badge-icon">✅</div>
+           <div class="trust-badge-text">
+            <strong>Trusted Information</strong>
+            <span>Based on bike repair knowledge and expert sources.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">🔒</div>
+           <div class="trust-badge-text">
+            <strong>Private & Secure</strong>
+            <span>Your information is safe and confidential.</span>
+           </div>
+          </div>
+          <div class="trust-badge">
+           <div class="trust-badge-icon">💡</div>
+           <div class="trust-badge-text">
+            <strong>Helpful Guidance</strong>
+            <span>Clear advice and next steps to fix your problem.</span>
+           </div>
+          </div>
+         </div>
+         <div class="hero-image">
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="120" cy="120" r="100" fill="#EFF6FF" opacity="0.25"/>
+           <circle cx="75" cy="165" r="28" stroke="#2563EB" stroke-width="7" fill="none"/>
+           <circle cx="75" cy="165" r="8" fill="#2563EB"/>
+           <circle cx="165" cy="165" r="28" stroke="#2563EB" stroke-width="7" fill="none"/>
+           <circle cx="165" cy="165" r="8" fill="#2563EB"/>
+           <path d="M75 165H165" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
+           <path d="M75 165L120 100L165 165" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+           <path d="M120 100V70" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
+           <circle cx="120" cy="60" r="10" fill="#60A5FA"/>
+          </svg>
+         </div>
+       </div>
+      </div>
+   </div>
+  </div>
+
+    <div class="notice-banner">
+     <span class="notice-icon">ℹ️</span>
+     <span>Important: This tool provides general information and is not a substitute for professional bike repair advice, diagnosis, or service. If you have an emergency, please call your local emergency number.</span>
+    </div>
+
+  <div class="section-title" style="text-align:left;margin-bottom:20px;">
+   <h2 style="font-size:18px;">Common Problems</h2>
+  </div>
+
+    <div class="symptom-grid">
+     <a href="chain-noise.html" class="symptom-card">
+      <div class="icon">⛓️</div>
+      <h3>Chain Noise</h3>
+      <p>Squeaking, grinding, loose chain</p>
+     </a>
+     <a href="poor-mileage.html" class="symptom-card">
+      <div class="icon">⛽</div>
+      <h3>Poor Mileage</h3>
+      <p>High fuel consumption issues</p>
+     </a>
+     <a href="#" class="symptom-card">
+      <div class="icon">🔑</div>
+      <h3>Bike Won't Start</h3>
+      <p>Clicking, dead battery, no crank</p>
+     </a>
+     <a href="#" class="symptom-card">
+      <div class="icon">🛑</div>
+      <h3>Brake Issues</h3>
+      <p>Squealing, weak braking, brake drag</p>
+     </a>
+     <a href="#" class="symptom-card">
+      <div class="icon">⚠️</div>
+      <h3>Warning Lights</h3>
+      <p>Engine check, ABS, oil pressure</p>
+     </a>
+    </div>
+
+  <div class="privacy-banner">
+   <span class="privacy-icon">🔒</span>
+   <span>Your privacy matters. All information you provide is encrypted and never shared with third parties.</span>
+  </div>
+ </main>
+
+<script>
+ function performHeroSearch(query) {
+  let searchQuery = query;
+  
+  if (!searchQuery) {
+   searchQuery = document.getElementById('heroSearchInput') ? 
+    document.getElementById('heroSearchInput').value : null;
+  }
+  
+  if (!searchQuery) {
+   return;
+  }
+  
+  searchQuery = searchQuery.trim();
+  const lowerQuery = searchQuery.toLowerCase();
+  
+  if (lowerQuery.includes('chain') || lowerQuery.includes('noise') ||
+    lowerQuery.includes('squeak') || lowerQuery.includes('grinding')) {
+   window.location.href = `bike/chain-noise.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('mileage') || lowerQuery.includes('fuel') ||
+    lowerQuery.includes('consumption') || lowerQuery.includes('poor')) {
+   window.location.href = `bike/poor-mileage.html?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('start') || lowerQuery.includes('battery') ||
+    lowerQuery.includes('clicking') || lowerQuery.includes('crank')) {
+   window.location.href = `bike/?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('brake') || lowerQuery.includes('braking')) {
+   window.location.href = `bike/?q=${encodeURIComponent(searchQuery)}`;
+  } else if (lowerQuery.includes('warning') || lowerQuery.includes('light') ||
+    lowerQuery.includes('abs') || lowerQuery.includes('oil')) {
+   window.location.href = `bike/?q=${encodeURIComponent(searchQuery)}`;
+  } else {
+   window.location.href = `bike/?q=${encodeURIComponent(searchQuery)}`;
+  }
+ }
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+  const heroSearchInput = document.getElementById('heroSearchInput');
+  if (heroSearchInput) {
+   heroSearchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+     performHeroSearch();
+    }
+   });
+  }
+ });
+</script>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social"><a href="https://twitter.com/fixitall" target="_blank" rel="noopener">𝕏</a><a href="https://linkedin.com/company/fixitall" target="_blank" rel="noopener">in</a><a href="https://facebook.com/fixitall" target="_blank" rel="noopener">📘</a><a href="https://instagram.com/fixitall" target="_blank" rel="noopener">📸</a></div>
+  </div>
+  <div class="footer-col"><h4>Quick Links</h4><a href="/diagnosis-app/">Home</a><a href="/diagnosis-app/categories.html">Categories</a><a href="/diagnosis-app/how-it-works/">How It Works</a><a href="/diagnosis-app/blog/">Blog</a><a href="/diagnosis-app/about/">About Us</a></div>
+  <div class="footer-col"><h4>Categories</h4><a href="/diagnosis-app/health/">Health</a><a href="/diagnosis-app/car/">Automobile</a><a href="/diagnosis-app/home/">Home Repairs</a><a href="/diagnosis-app/tech/">Electronics</a><a href="/diagnosis-app/garden/">Garden</a><a href="/diagnosis-app/categories.html">More</a></div>
+  <div class="footer-col"><h4>Resources</h4><a href="/diagnosis-app/how-it-works/">Guides</a><a href="/diagnosis-app/faq.html">FAQs</a><a href="/diagnosis-app/disclaimer.html">Disclaimer</a><a href="/diagnosis-app/privacy.html">Privacy Policy</a><a href="/diagnosis-app/terms.html">Terms of Use</a></div>
+ </div>
+ <div class="footer-bottom">– 2024 FixItAll. All rights reserved.</div>
+</footer>
+</body>
+</html>

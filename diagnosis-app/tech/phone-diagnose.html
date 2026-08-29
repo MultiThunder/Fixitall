@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+ <title>Phone – Diagnosis Assistant – FixItAll</title>
+ <meta name="description" content="Answer a few questions to get possible causes for smartphone problems. AI-powered troubleshooting."/>
+ <link rel="canonical" href="/electronics/phone/diagnose/"/>
+ <link rel="stylesheet" href="/styles.css?v=12"/>
+ <script src="/theme-toggle.js?v=3"></script>
+</head>
+<body>
+
+<header class="header">
+ <div class="header-logo">
+  <a href="/diagnosis-app/" class="header-logo-link"><div class="header-logo-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div></a>
+  <span class="header-logo-text">FixItAll</span>
+ </div>
+ <nav class="header-nav">
+  <a href="/diagnosis-app/">Home</a>
+  <a href="/diagnosis-app/health/">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/../tech/" class="active">Electronics</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <button class="theme-toggle" aria-label="Toggle dark mode"><span class="sun-icon">☀️</span><span class="moon-icon">🌙</span></button>
+   <button class="btn-login">Login</button>
+ </nav>
+</header>
+
+<main class="container">
+  <div class="breadcrumb"><span>Home -> Electronics -> Phone – Diagnosis Assistant</span></div>
+
+ <div class="diagnosis-header">
+  <h1>Phone – Diagnosis Assistant</h1>
+  <p>Answer a few questions to get possible causes</p>
+ </div>
+
+ <!-- Progress Indicator -->
+ <div class="progress-indicator">
+  <div class="progress-step">
+   <div class="progress-circle active" id="dot-1">1</div>
+  </div>
+  <div class="progress-line" id="line-1"></div>
+  <div class="progress-step">
+   <div class="progress-circle" id="dot-2">2</div>
+  </div>
+  <div class="progress-line" id="line-2"></div>
+  <div class="progress-step">
+   <div class="progress-circle" id="dot-3">3</div>
+  </div>
+  <div class="progress-line" id="line-3"></div>
+  <div class="progress-step">
+   <div class="progress-circle" id="dot-4">4</div>
+  </div>
+  <div class="progress-line" id="line-4"></div>
+  <div class="progress-step">
+   <div class="progress-circle" id="dot-5">5</div>
+  </div>
+ </div>
+
+ <!-- Step 1 -->
+ <div id="step-1" class="question-card">
+  <h3>Q1. What is the main problem?</h3>
+  <p class="subtitle">Select one</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Battery drains very fast</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Slow / laggy</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Screen cracked / unresponsive</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q1"/><div class="option-radio"></div><span class="option-label">Apps crashing / gets hot</span>
+   </label>
+  </div>
+  <div class="card-actions">
+   <span></span>
+   <button class="btn-primary" onclick="nextStep(2)">Next Question ?</button>
+  </div>
+ </div>
+
+ <!-- Step 2 -->
+ <div id="step-2" class="question-card hidden">
+  <h3>Q2. How old is the phone?</h3>
+  <p class="subtitle">Select one</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q2"/><div class="option-radio"></div><span class="option-label">Less than 1 year</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q2"/><div class="option-radio"></div><span class="option-label">1–3 years</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q2"/><div class="option-radio"></div><span class="option-label">More than 3 years</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q2"/><div class="option-radio"></div><span class="option-label">Not sure</span>
+   </label>
+  </div>
+  <div class="card-actions">
+   <button class="btn-secondary" onclick="prevStep(1)">? ? ← ← Back</button>
+   <button class="btn-primary" onclick="nextStep(3)">Next Question ?</button>
+  </div>
+ </div>
+
+ <!-- Step 3 -->
+ <div id="step-3" class="question-card hidden">
+  <h3>Q3. Any of these signs?</h3>
+  <p class="subtitle">Select all that apply</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleCheck(this)">
+    <input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Storage almost full</span>
+   </label>
+   <label class="option-item" onclick="toggleCheck(this)">
+    <input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">OS update available</span>
+   </label>
+   <label class="option-item" onclick="toggleCheck(this)">
+    <input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">Many apps running in background</span>
+   </label>
+   <label class="option-item" onclick="toggleCheck(this)">
+    <input type="checkbox"/><div class="option-checkbox"></div><span class="option-label">None of the above</span>
+   </label>
+  </div>
+  <div class="card-actions">
+   <button class="btn-secondary" onclick="prevStep(2)">? ? ← ← Back</button>
+   <button class="btn-primary" onclick="nextStep(4)">Next Question ?</button>
+  </div>
+ </div>
+
+ <!-- Step 4 -->
+ <div id="step-4" class="question-card hidden">
+  <h3>Q4. Have you dropped it or got it wet?</h3>
+  <p class="subtitle">Select one</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q4"/><div class="option-radio"></div><span class="option-label">Dropped it recently</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q4"/><div class="option-radio"></div><span class="option-label">Got it wet</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q4"/><div class="option-radio"></div><span class="option-label">No damage incidents</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q4"/><div class="option-radio"></div><span class="option-label">Not sure</span>
+   </label>
+  </div>
+  <div class="card-actions">
+   <button class="btn-secondary" onclick="prevStep(3)">? ? ← ← Back</button>
+   <button class="btn-primary" onclick="nextStep(5)">Next Question ?</button>
+  </div>
+ </div>
+
+ <!-- Step 5 -->
+ <div id="step-5" class="question-card hidden">
+  <h3>Q5. When did the problem start?</h3>
+  <p class="subtitle">Select one</p>
+  <div class="options-group">
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q5"/><div class="option-radio"></div><span class="option-label">After an app or OS update</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q5"/><div class="option-radio"></div><span class="option-label">Gradually over time</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q5"/><div class="option-radio"></div><span class="option-label">Suddenly, for no reason</span>
+   </label>
+   <label class="option-item" onclick="toggleRadio(this)">
+    <input type="radio" name="q5"/><div class="option-radio"></div><span class="option-label">Always been like this</span>
+   </label>
+  </div>
+  <div class="card-actions">
+   <button class="btn-secondary" onclick="prevStep(4)">? ? ← ← Back</button>
+   <button class="btn-primary" onclick="showResult()">🔍 🔍 Get Results</button>
+  </div>
+ </div>
+
+ <!-- Result -->
+ <div id="result" class="hidden">
+  <div class="result-header">
+   <h1>Possible Causes</h1>
+   <p>Based on your answers</p>
+  </div>
+
+  <div class="result-layout">
+   <div class="result-main">
+    <div class="probability-list">
+     <div class="probability-item top">
+      <div class="probability-header">
+       <h4>Battery Drains Very Fast</h4>
+       <span class="probability-value">35%</span>
+      </div>
+      <div class="probability-bar"><div class="probability-fill" style="width:35%"></div></div>
+      <p class="probability-subtitle">Battery degradation or rogue background apps.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header">
+       <h4>Phone is Slow / Laggy</h4>
+       <span class="probability-value">25%</span>
+      </div>
+      <div class="probability-bar"><div class="probability-fill" style="width:25%"></div></div>
+      <p class="probability-subtitle">Low storage, outdated OS, or too many apps.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header">
+       <h4>Apps Crashing Frequently</h4>
+       <span class="probability-value">15%</span>
+      </div>
+      <div class="probability-bar"><div class="probability-fill" style="width:15%"></div></div>
+      <p class="probability-subtitle">Software bugs, low memory, or OS issues.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header">
+       <h4>Phone Gets Hot</h4>
+       <span class="probability-value">10%</span>
+      </div>
+      <div class="probability-bar"><div class="probability-fill" style="width:10%"></div></div>
+      <p class="probability-subtitle">Heavy usage, charging, or battery issue.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header">
+       <h4>Screen Cracked / Unresponsive</h4>
+       <span class="probability-value">10%</span>
+      </div>
+      <div class="probability-bar"><div class="probability-fill" style="width:10%"></div></div>
+      <p class="probability-subtitle">Physical damage or digitizer failure.</p>
+     </div>
+     <div class="probability-item">
+      <div class="probability-header">
+       <h4>Other Causes</h4>
+       <span class="probability-value">5%</span>
+      </div>
+      <div class="probability-bar"><div class="probability-fill" style="width:5%"></div></div>
+      <p class="probability-subtitle">Hardware fault, malware, or battery wear.</p>
+     </div>
+    </div>
+   </div>
+
+   <div class="side-cards">
+    <div class="advice-card success-card">
+     <h4>✅ What You Can Do</h4>
+     <ul>
+      <li>Free up storage space</li>
+      <li>Update the OS and apps</li>
+      <li>Close background apps</li>
+      <li>Reduce screen brightness</li>
+     </ul>
+    </div>
+    <div class="advice-card warning-card">
+     <h4>🔧 When to See a Technician</h4>
+     <ul>
+      <li>Cracked or unresponsive screen</li>
+      <li>Battery swelling or overheating</li>
+      <li>Phone won't charge or turn on</li>
+      <li>Water or liquid damage</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+
+  <div class="disclaimer">
+   <span class="disclaimer-icon">⚠</span>
+   <span>Disclaimer: Not a substitute for professional advice. These are possible causes based on your answers. Consult a technician.</span>
+  </div>
+
+  <div class="view-all-wrap">
+   <a href="/diagnosis-app/phone-diagnose.html" class="btn-outline">↺ Start Over</a>
+  </div>
+ </div>
+
+ <!-- Privacy Notice -->
+ <div class="disclaimer" style="margin-top:20px;background:var(--success-soft);border-color:var(--success-border);">
+  <span class="disclaimer-icon">⚠</span>
+  <span>Your information is safe and anonymous.</span>
+ </div>
+</main>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <div class="footer-col">
+   <div class="footer-brand-text">FixItAll</div>
+   <p class="footer-desc">Your smart assistant for health, home and auto problems. Get instant solutions and expert guidance.</p>
+   <div class="footer-social">
+    <span>𝕏</span>
+    <span>in</span>
+    <span>𝕏</span>
+    <span>𝕏</span>
+   </div>
+  </div>
+  <div class="footer-col">
+   <h4>Quick Links</h4>
+   <a href="/diagnosis-app/">Home</a>
+   <a href="/diagnosis-app/categories.html">Categories</a>
+   <a href="/diagnosis-app/how-it-works/">How It Works</a>
+   <a href="/diagnosis-app/blog/">Blog</a>
+   <a href="/diagnosis-app/about/">About Us</a>
+  </div>
+  <div class="footer-col">
+   <h4>Categories</h4>
+   <a href="/diagnosis-app/health/">Health</a>
+   <a href="/diagnosis-app/car/">Automobile</a>
+   <a href="/diagnosis-app/home/">Home Repairs</a>
+   <a href="/diagnosis-app/tech/">Electronics</a>
+   <a href="/diagnosis-app/categories.html">More</a>
+  </div>
+  <div class="footer-col">
+   <h4>Resources</h4>
+   <a href="/diagnosis-app/how-it-works/">Guides</a>
+   <a href="/diagnosis-app/faq.html">FAQs</a>
+   <a href="/diagnosis-app/disclaimer.html">Disclaimer</a>
+   <a href="/diagnosis-app/privacy.html">Privacy Policy</a>
+   <a href="/diagnosis-app/terms.html">Terms of Use</a>
+  </div>
+ </div>
+ <div class="footer-bottom">– 2024 FixItAll. All rights reserved.</div>
+</footer>
+
+<script src="/diagnosis.js?v=3"></script>
+<script src="/scripts.js?v=3"></script>
+</body>
+</html>
